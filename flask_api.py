@@ -1,4 +1,3 @@
-from transformers import AutoTokenizer
 import transformers
 import torch
 from langchain import HuggingFacePipeline, PromptTemplate,  LLMChain
@@ -9,7 +8,7 @@ from pyngrok import ngrok
 model = "tiiuae/falcon-7b-instruct"
 
 # Initialize the tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model, device_map="auto")
+tokenizer = transformers.AutoTokenizer.from_pretrained(model, device_map="auto")
 
 # Create a text generation pipeline
 pipeline = transformers.pipeline(
